@@ -18,8 +18,7 @@
     <main class="app">
         <header class="top">
             <div class="brand">
-                <span class="logo">🎭</span>
-                <h1><span>TitreGen</span> <strong>V2</strong></h1>
+                <h1><span></span> <strong>DramaGenMe</strong></h1>
             </div>
             <div class="badges">
                 <span id="badge-hard" class="badge badge-hard" hidden>18+</span>
@@ -92,6 +91,14 @@
             <p class="footer">Pro tip : appuie sur <kbd>Entrée</kbd> pour regénérer. Un thème + Hard + Intensité 3 =
                 titres bien épicés 🌶️</p>
         </section>
+        <section class="card" id="history-card" hidden>
+            <p class="subtitle">Historique</p>
+            <div class="row">
+                <button id="btn-clear-history">Effacer l'historique</button>
+                <button id="btn-export-history">Exporter JSON</button>
+            </div>
+        </section>
+
         <div id="toast" class="toast" aria-hidden="true"></div>
         <footer>Nathan Chambrette - 2025</footer>
     </main>
