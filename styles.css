@@ -9,7 +9,7 @@
     /* default */
     --accent-2: #c084fc;
     --ring: rgba(110, 168, 254, 0.45);
-    --hard-1: #ff6a3d;
+    --hard-1: #ffd23d;
     /* hard palette */
     --hard-2: #ff1f6b;
     --soft-1: #a855f7;
@@ -139,6 +139,28 @@ body {
         align-items: center
     }
 }
+
+select {
+    color: var(--text);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+}
+
+select option,
+select optgroup {
+    color:  #0b0e13;
+    background: #fff
+}
+
+select option:checked {
+    background: #e5e7eb;
+    color: #0b0e13;
+}
+
+select option[disabled],
+select option[hidden] {
+    color: #9aa3b2;
+}
+
 
 button,
 select,
@@ -327,4 +349,26 @@ kbd {
     border-radius: 6px;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
     font-size: 12px
+}
+
+#history {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px;
+}
+
+#history li {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 6px 0;
+}
+
+#history li span {
+    flex : 1;
+}
+
+#history li button {
+    font-size: 12px;
+    padding: 6px 8px;
 }
