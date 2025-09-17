@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Générateur de titres — V2</title>
+    <meta name="description"
+        content="Générateur de titres dramatiques — narratif, choc, soft & hard, avec thèmes et design néon." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="mode-off">
+    <main class="app">
+        <header class="top">
+            <div class="brand">
+                <span class="logo">🎭</span>
+                <h1><span>TitreGen</span> <strong>V2</strong></h1>
+            </div>
+            <div class="badges">
+                <span id="badge-hard" class="badge badge-hard" hidden>18+</span>
+            </div>
+        </header>
+
+        <section class="card">
+            <p class="subtitle">Suspense, révélations, et modes <em>Soft</em>/<em>Hard</em> (toujours non explicites).
+                Choisis un style, un thème, puis génère.</p>
+
+            <div id="output" class="output" aria-live="polite">Clique sur « Générer » pour commencer.</div>
+
+            <div class="controls">
+                <div class="row row-buttons">
+                    <button id="btn-generate" class="primary"
+                        aria-label="Générer un titre"><span>Générer</span></button>
+                    <button id="btn-copy" title="Copier dans le presse-papiers">Copier</button>
+                    <button id="btn-refresh-lexique" title="Rafraîchir le champ lexical">Rafraîchir le lexique</button>
+                </div>
+
+                <label class="chip" title="Choisis un style de phrase">
+                    Style
+                    <select id="style">
+                        <option value="auto">Aléatoire</option>
+                        <option value="narratif">Narratif (Le jour où…)</option>
+                        <option value="personnage">Personnage + révélation</option>
+                        <option value="situation">Situation + conséquence</option>
+                        <option value="choc">Phrase choc</option>
+                        <option value="grivois">Grivois (soft)</option>
+                    </select>
+                </label>
+
+                <label class="chip" title="Thème de vocabulaire">
+                    Thème
+                    <select id="theme">
+                        <option value="auto">Aléatoire</option>
+                        <option value="bureau">Bureau</option>
+                        <option value="voisinage">Voisinage</option>
+                        <option value="soiree">Soirée</option>
+                        <option value="sms">SMS / Réseaux</option>
+                        <option value="voyage">Voyage d’affaires</option>
+                        <option value="club">Nuit en club</option>
+                        <option value="plage">Plage / vacances</option>
+                        <option value="campus">Appart’ d’étudiants (adultes)</option>
+                    </select>
+                </label>
+
+                <label class="chip" title="Mode de suggestivité">
+                    Mode
+                    <select id="mode">
+                        <option value="off" selected>Off</option>
+                        <option value="soft">Soft</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </label>
+
+                <label class="chip" title="Dose de sensationnalisme et adjectifs">
+                    Intensité
+                    <input id="intensity" type="range" min="0" max="3" step="1" value="1" />
+                </label>
+
+                <label class="chip" title="Évite les redites proches">
+                    Anti‑doublon
+                    <input id="antidup" type="checkbox" checked />
+                </label>
+            </div>
+
+            <p class="hint">En modes Soft/Hard, les liens familiaux sont exclus et rien n’est **explicite**. Hard = plus
+                cru/direct dans la formulation.</p>
+            <p class="footer">Pro tip : appuie sur <kbd>Entrée</kbd> pour regénérer. Un thème + Hard + Intensité 3 =
+                titres bien épicés 🌶️</p>
+        </section>
+        <div id="toast" class="toast" aria-hidden="true"></div>
+        <footer>Nathan Chambrette - 2025</footer>
+    </main>
+
+    <script src="app.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+/* Fonts */
+:root {
+    --bg: #0b0e13;
+    --bg2: #0f1117;
+    --card: #121824;
+    --muted: #9aa3b2;
+    --text: #e8ecf1;
+    --accent: #6ea8fe;
+    /* default */
+    --accent-2: #c084fc;
+    --ring: rgba(110, 168, 254, 0.45);
+    --hard-1: #ff6a3d;
+    /* hard palette */
+    --hard-2: #ff1f6b;
+    --soft-1: #a855f7;
+    /* soft palette */
+    --soft-2: #22d3ee;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto;
+    background: radial-gradient(1200px 600px at 0% 0%, #141924 0%, var(--bg) 45%),radial-gradient(1000px 500px at 100% 100%, #0b0f17 0%, var(--bg2) 60%);
+    color: var(--text);
+    display: grid;
+    place-items: center;
+    padding: 32px;
+    line-height: 1.45;
+}
+
+.app {
+    width: min(1060px, 100%)
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px
+}
+
+.brand {
+    display: flex;
+    gap: 12px;
+    align-items: center
+}
+
+.logo {
+    filter: drop-shadow(0 2px 10px rgba(0, 0, 0, .4));
+    font-size: 22px
+}
+
+.top h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: .5px;
+    font-size: 34px;
+    margin: 0
+}
+
+.top h1 strong {
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
+.badges {
+    display: flex;
+    gap: 8px
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    font-size: 12px;
+    background: rgba(255, 255, 255, .05)
+}
+
+.badge-hard {
+    background: linear-gradient(90deg, var(--hard-1), var(--hard-2));
+    color: #0b0e13;
+    border: none
+}
+
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 22px;
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+.subtitle {
+    color: var(--muted);
+    margin: 4px 0 16px
+}
+
+.output {
+    margin: 18px 0 16px;
+    font-size: clamp(22px, 3vw, 34px);
+    font-weight: 800;
+    letter-spacing: .2px;
+    padding: 20px 18px;
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    text-wrap: balance;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.controls {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr
+}
+
+@media (min-width:880px) {
+    .controls {
+        grid-template-columns: 1fr auto auto auto auto auto;
+        align-items: center
+    }
+}
+
+button,
+select,
+.chip input[type="checkbox"],
+.chip input[type="range"] {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+    color: var(--text);
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 12px;
+    outline: none;
+    transition: transform .05s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+button {
+    cursor: pointer
+}
+
+button:hover,
+select:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+button.primary {
+    background: linear-gradient(180deg, var(--accent), var(--accent-2));
+    color: #0a0c10;
+    border: none;
+    font-weight: 800;
+    box-shadow: 0 8px 20px var(--ring);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px
+}
+
+button.primary span:after {
+    content: "↻";
+    font-weight: 800;
+    opacity: .9
+}
+
+.chip {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap
+}
+
+.chip>label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 8px;
+    font-size: 13px;
+    color: var(--muted)
+}
+
+input[type="range"] {
+    width: 170px
+}
+
+.row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap
+}
+
+.row-buttons button {
+    will-change: transform
+}
+
+.footer {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 18px
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 13px
+}
+
+.toast {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 16px;
+    display: grid;
+    place-items: center;
+    pointer-events: none
+}
+
+.toast>div {
+    pointer-events: auto;
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 10px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35)
+}
+
+/* Modes */
+body.mode-soft {
+    --accent: var(--soft-1);
+    --accent-2: var(--soft-2);
+    --ring: rgba(168, 85, 247, .35)
+}
+
+body.mode-hard {
+    --accent: var(--hard-1);
+    --accent-2: var(--hard-2);
+    --ring: rgba(255, 107, 61, .35)
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    }
+
+    to {
+        box-shadow: 0 8px 24px var(--ring);
+    }
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translateX(-1px)
+    }
+
+    20%,
+    80% {
+        transform: translateX(2px)
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translateX(-4px)
+    }
+
+    40%,
+    60% {
+        transform: translateX(4px)
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1)
+    }
+
+    50% {
+        transform: scale(1.02)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+.btn-pulse {
+    animation: pulse .3s ease
+}
+
+.btn-shake {
+    animation: shake .4s ease
+}
+
+/* Output emphasis in hard */
+body.mode-hard .output {
+    border-color: rgba(255, 99, 71, .25);
+    box-shadow: inset 0 0 0 1px rgba(255, 99, 71, .12)
+}
+
+kbd {
+    background: #111826;
+    border: 1px solid rgba(255, 255, 255, .15);
+    padding: 2px 6px;
+    border-radius: 6px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 12px
+}
